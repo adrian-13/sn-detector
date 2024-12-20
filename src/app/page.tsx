@@ -143,33 +143,37 @@ export default function Home() {
 
         {results && (
           <div className="mt-8 bg-white shadow rounded-lg p-6">
-            <h2 className="text-xl font-semibold mb-4">Výsledky analýzy</h2>
+            <h2 className="text-xl font-semibold mb-4 text-blue-600">Výsledky analýzy</h2>
             {results.serialNumbers?.length > 0 ? (
-              <div className="space-y-4">
+              <div className="grid gap-4 md:grid-cols-2">
                 {results.serialNumbers.map((sn, index) => (
-                  <div key={index} className="p-4 bg-gray-50 rounded-md">
-                    <div className="font-medium">Sériové číslo: {sn.sn}</div>
+                  <div
+                    key={index}
+                    className="p-4 bg-gray-100 rounded-md shadow-sm transition-transform transform hover:scale-105 hover:bg-blue-50"
+                  >
+                    <div className="text-lg font-medium text-gray-800">Sériové číslo: {sn.sn}</div>
                     <div className="text-sm text-gray-500">
-                      Spoľahlivosť: {sn.confidencePercent}%
+                      Spoľahlivosť: <span className="font-semibold text-green-600">{sn.confidencePercent}%</span>
                     </div>
                   </div>
                 ))}
               </div>
             ) : (
-              <p className="text-gray-600">
-                Neboli nájdené žiadne sériové čísla.
-              </p>
+              <p className="text-gray-600">Neboli nájdené žiadne sériové čísla.</p>
             )}
 
             {results.failedCandidates?.length > 0 && (
               <div className="mt-6">
-                <h3 className="text-lg font-medium mb-3">Nevalidné nálezy</h3>
-                <div className="space-y-3">
+                <h3 className="text-lg font-medium text-red-600 mb-3">Nevalidné nálezy</h3>
+                <div className="space-y-4">
                   {results.failedCandidates.map((candidate, index) => (
-                    <div key={index} className="p-3 bg-gray-50 rounded-md">
-                      <div className="font-medium">Kandidát: {candidate.candidate}</div>
+                    <div
+                      key={index}
+                      className="p-3 bg-red-50 rounded-md border border-red-200 shadow-sm transition-transform transform hover:scale-105"
+                    >
+                      <div className="font-medium text-red-700">Kandidát: {candidate.candidate}</div>
                       <div className="text-sm text-gray-500">
-                        Dôvody: {candidate.reasons.join(', ')}
+                        Dôvody: <span className="text-red-600">{candidate.reasons.join(', ')}</span>
                       </div>
                     </div>
                   ))}
