@@ -161,7 +161,7 @@ function isValidSN(sn: string): ValidationResult {
   const trimmed = sn.trim();
 
   if (trimmed.length < 3 || trimmed.length > 30) {
-    reasons.push(`The length must be between 3 and 30 characters. Current length: ${trimmed.length}`);
+    reasons.push(`Dĺžka musí byť medzi 3 a 30 znakmi. Aktuálna dĺžka: ${trimmed.length}`);
   }
 
   if (!/[A-Za-z0-9]/.test(trimmed)) {

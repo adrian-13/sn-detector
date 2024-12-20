@@ -58,13 +58,13 @@ export default function Home() {
       });
 
       if (!response.ok) {
-        throw new Error('Analýza zlyhala');
+        throw new Error('Analysis failed');
       }
 
       const data = await response.json();
       setResults(data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Neočakávaná chyba');
+      setError(err instanceof Error ? err.message : 'Unexpected error');
     } finally {
       setLoading(false);
     }
