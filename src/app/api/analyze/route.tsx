@@ -125,7 +125,7 @@ export async function POST(req: Request): Promise<NextResponse<ApiResponse | { e
                   failedCandidates.push({
                     candidate: sn_candidate,
                     reasons: validity.isValid ? 
-                      [`Konfidenčnosť (${confidencePercentage}%) je pod prahom (${CONFIDENCE_THRESHOLD}%)`] : 
+                      [`Confidence (${confidencePercentage}%) is below the threshold (${CONFIDENCE_THRESHOLD}%)`] : 
                       validity.reasons
                   });
                 }
@@ -161,11 +161,11 @@ function isValidSN(sn: string): ValidationResult {
   const trimmed = sn.trim();
 
   if (trimmed.length < 3 || trimmed.length > 30) {
-    reasons.push(`Dĺžka musí byť medzi 3 a 30 znakmi. Aktuálna dĺžka: ${trimmed.length}`);
+    reasons.push(`The length must be between 3 and 30 characters. Current length: ${trimmed.length}`);
   }
 
   if (!/[A-Za-z0-9]/.test(trimmed)) {
-    reasons.push("Musí obsahovať aspoň jeden alfanumerický znak (písmeno alebo číslicu).");
+    reasons.push("It must contain at least one alphanumeric character (letter or digit).");
   }
 
   return {

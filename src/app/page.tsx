@@ -43,7 +43,7 @@ export default function Home() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!file) {
-      setError('Prosím, vyberte obrázok na analýzu');
+      setError('Please select an image for analysis');
       return;
     }
 
@@ -75,10 +75,10 @@ export default function Home() {
       <div className="max-w-2xl mx-auto px-4">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Detektor sériových čísel
+            Serial Number Detector
           </h1>
           <p className="text-gray-600">
-            Nahrajte obrázok a nechajte AI nájsť sériové čísla
+            Upload an image and let AI detect serial numbers
           </p>
         </div>
 
@@ -105,7 +105,7 @@ export default function Home() {
                     <>
                       <Upload className="w-12 h-12 mb-4 text-gray-400" />
                       <p className="mb-2 text-sm text-gray-500">
-                        <span className="font-semibold">Kliknite pre nahratie</span> alebo pretiahnite súbor sem
+                        <span className="font-semibold">Click to upload</span> or drag and drop a file here
                       </p>
                     </>
                   )}
@@ -123,12 +123,12 @@ export default function Home() {
               {loading ? (
                 <div className="flex items-center">
                   <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2" />
-                  Analyzujem...
+                  Analyzing...
                 </div>
               ) : (
                 <>
                   <Camera className="mr-2 h-5 w-5" />
-                  Analyzovať obrázok
+                  Analyze Image
                 </>
               )}
             </button>
@@ -144,7 +144,7 @@ export default function Home() {
       {results && (
         <div className="mt-8 flex justify-center">
           <div className="bg-white shadow rounded-lg p-6 max-w-md">
-            <h2 className="text-xl font-semibold mb-4 text-blue-600 text-center">Výsledky analýzy</h2>
+            <h2 className="text-xl font-semibold mb-4 text-blue-600 text-center">Analysis Results</h2>
             {results.serialNumbers?.length > 0 ? (
               <div className="space-y-4">
                 {results.serialNumbers.map((sn, index) => (
@@ -152,29 +152,29 @@ export default function Home() {
                     key={index}
                     className="p-4 bg-gray-100 rounded-md shadow-sm transition-transform transform hover:scale-105 hover:bg-blue-50"
                   >
-                    <div className="text-lg font-medium text-gray-800">Sériové číslo: {sn.sn}</div>
+                    <div className="text-lg font-medium text-gray-800">Analysis Results: {sn.sn}</div>
                     <div className="text-sm text-gray-500">
-                      Spoľahlivosť: <span className="font-semibold text-green-600">{sn.confidencePercent}%</span>
+                      Confidence: <span className="font-semibold text-green-600">{sn.confidencePercent}%</span>
                     </div>
                   </div>
                 ))}
               </div>
             ) : (
-              <p className="text-gray-600 text-center">Neboli nájdené žiadne sériové čísla.</p>
+              <p className="text-gray-600 text-center">No serial numbers were found.</p>
             )}
 
             {results.failedCandidates?.length > 0 && (
               <div className="mt-6">
-                <h3 className="text-lg font-medium text-red-600 mb-3 text-center">Nevalidné nálezy</h3>
+                <h3 className="text-lg font-medium text-red-600 mb-3 text-center">Invalid Findings</h3>
                 <div className="space-y-4">
                   {results.failedCandidates.map((candidate, index) => (
                     <div
                       key={index}
                       className="p-3 bg-red-50 rounded-md border border-red-200 shadow-sm transition-transform transform hover:scale-105"
                     >
-                      <div className="font-medium text-red-700">Kandidát: {candidate.candidate}</div>
+                      <div className="font-medium text-red-700">Candidate: {candidate.candidate}</div>
                       <div className="text-sm text-gray-500">
-                        Dôvody: <span className="text-red-600">{candidate.reasons.join(', ')}</span>
+                        Reasons: <span className="text-red-600">{candidate.reasons.join(', ')}</span>
                       </div>
                     </div>
                   ))}
