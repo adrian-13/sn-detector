@@ -2,6 +2,9 @@
 
 Tento projekt slúži na rozpoznávanie sériových čísel z nahraných obrázkov pomocou umelej inteligencie. Umožňuje užívateľom nahrať obrázok, analyzovať ho a zobraziť identifikované sériové čísla spolu so spoľahlivosťou rozpoznania.
 
+## Live Ukážka
+Live ukážka projektu je dostupná na adrese: [https://sn-detector.vercel.app/](https://sn-detector.vercel.app/)
+
 ## Funkcionality
 - **Nahrávanie obrázkov**: Jednoduché nahratie obrázkov pomocou drag-and-drop alebo výberom súboru.
 - **Automatická analýza**: Po nahraní sa obrázok automaticky analyzuje a extrahujú sa sériové čísla.
