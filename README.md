@@ -1,64 +1,64 @@
-# Detektor Sériových Čísel
+# Serial Number Detector
 
-Tento projekt slúži na rozpoznávanie sériových čísel z nahraných obrázkov pomocou umelej inteligencie. Umožňuje užívateľom nahrať obrázok, analyzovať ho a zobraziť identifikované sériové čísla spolu so spoľahlivosťou rozpoznania.
+This project is designed to recognize serial numbers from uploaded images using artificial intelligence. It allows users to upload an image, analyze it, and display identified serial numbers along with their recognition confidence.
 
-## Live Ukážka
-Live ukážka projektu je dostupná na adrese: [https://sn-detector.vercel.app/](https://sn-detector.vercel.app/)
+## Live Demo
+A live demo of the project is available at: [https://sn-detector.vercel.app/](https://sn-detector.vercel.app/)
 
-## Funkcionality
-- **Nahrávanie obrázkov**: Jednoduché nahratie obrázkov pomocou drag-and-drop alebo výberom súboru.
-- **Automatická analýza**: Po nahraní sa obrázok automaticky analyzuje a extrahujú sa sériové čísla.
-- **Flexibilný formát sériových čísel**: Formát rozpoznávaných sériových čísel je možné upraviť podľa potrieb (napr. zmenou regulárnych výrazov alebo pravidiel validácie).
-- **Prehľadné výsledky**: Identifikované čísla a ich spoľahlivosť sú prehľadne zobrazené, spolu s dôvodmi neúspechu pre nevalidné nálezy.
+## Features
+- **Image Upload**: Simple drag-and-drop or file selection to upload images.
+- **Automatic Analysis**: Automatically analyzes the uploaded image and extracts serial numbers.
+- **Flexible Serial Number Format**: The format of recognized serial numbers can be customized as needed (e.g., by modifying regular expressions or validation rules).
+- **Clear Results**: Displays identified serial numbers and their confidence levels, along with reasons for invalid findings.
 
-## Použitie
-1. Nahrajte obrázok so sériovými číslami.
-2. Kliknite na tlačidlo **Analyzovať obrázok**.
-3. Počkajte na výsledky analýzy:
-   - Zobrazia sa sériové čísla spolu so spoľahlivosťou rozpoznania.
-   - Ak boli identifikované nevalidné nálezy, zobrazia sa dôvody neúspechu.
+## Usage
+1. Upload an image containing serial numbers.
+2. Click the **Analyze Image** button.
+3. Wait for the analysis results:
+   - Serial numbers and their recognition confidence will be displayed.
+   - Reasons for invalid findings will also be provided.
 
-## Úprava Formátu Sériových Čísel
-Formát sériových čísel je definovaný pomocou regulárneho výrazu:
+## Customizing Serial Number Format
+The format of serial numbers is defined using a regular expression:
 
 ```typescript
 const SN_REGEX = /(serial\s*no\.?)|(s\s*\/\?\s*n\.?)|(serial\s*number)|(serial\s*#)|(sn:?)/i;
 ```
 
-Ak potrebujete zmeniť podmienky rozpoznania, môžete:
-- Upraviť regulárny výraz (`SN_REGEX`) tak, aby vyhovoval požadovanému formátu.
-- Prispôsobiť pravidlá validácie vo funkcii `isValidSN` na základe dĺžky, povolených znakov alebo iných kritérií.
+If you need to adjust the recognition conditions, you can:
+- Modify the regular expression (`SN_REGEX`) to match your desired format.
+- Adjust the validation rules in the `isValidSN` function based on length, allowed characters, or other criteria.
 
-## Technológie
-- **React.js**: Pre frontend aplikácie.
-- **Node.js**: Pre backend analýzu.
-- **Azure AI**: Na analýzu obrázkov a extrakciu textu.
-- **Tailwind CSS**: Na dizajn a styling.
+## Technologies
+- **React.js**: For the frontend application.
+- **Node.js**: For backend processing.
+- **Azure AI**: For image analysis and text extraction.
+- **Tailwind CSS**: For design and styling.
 
-## Spustenie Lokálne
-1. Klonujte repozitár:
+## Running Locally
+1. Clone the repository:
    ```bash
    git clone https://github.com/your-repository-url.git
    ```
-2. Nainštalujte závislosti:
+2. Install dependencies:
    ```bash
    npm install
    ```
-3. Spustite aplikáciu:
+3. Run the application:
    ```bash
    npm run dev
    ```
-4. Otvorte aplikáciu na [http://localhost:3000](http://localhost:3000).
+4. Open the application at [http://localhost:3000](http://localhost:3000).
 
-## Prispôsobenie
-Ak potrebujete projekt prispôsobiť, môžete:
-- Zmeniť pravidlá validácie sériových čísel v súbore `route.tsx`.
-- Upraviť dizajn v súbore `Home.tsx` alebo Tailwind CSS triedach.
-- Aktualizovať backend endpoint pre analýzu obrázkov v `api/analyze`.
+## Customization
+If you need to customize the project, you can:
+- Change serial number validation rules in `route.tsx`.
+- Modify the design in `Home.tsx` or Tailwind CSS classes.
+- Update the backend endpoint for image analysis in `api/analyze`.
 
-## Príspevky
-Vaše príspevky a návrhy na zlepšenie sú vítané! Prosím, vytvorte pull request alebo otvorte issue na GitHube.
+## Contributions
+Contributions and suggestions for improvement are welcome! Please create a pull request or open an issue on GitHub.
 
 ---
 
-Tento projekt bol vytvorený s cieľom uľahčiť proces identifikácie sériových čísel a poskytuje dostatočnú flexibilitu na prispôsobenie podľa špecifických požiadaviek.
+This project was created to simplify the process of serial number identification and provides sufficient flexibility for customization based on specific requirements.
