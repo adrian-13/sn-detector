@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Upload, Camera } from 'lucide-react';
+import Head from 'next/head'; // Importujte komponent Head
 
 interface SerialNumber {
   sn: string;
@@ -71,6 +72,10 @@ export default function Home() {
   };
 
   return (
+  <>
+    <Head>
+      <title>Serial Number Detector</title>
+    </Head>
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-2xl mx-auto px-4">
         <div className="text-center mb-8">
@@ -186,5 +191,6 @@ export default function Home() {
       )}
       </div>
     </div>
+  </>
   );
 }
