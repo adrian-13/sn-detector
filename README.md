@@ -53,7 +53,6 @@ If you need to adjust the recognition conditions, you can:
 ## Customization
 If you need to customize the project, you can:
 - Change serial number validation rules in `route.tsx`.
-- Update the backend endpoint for image analysis in `api/analyze`.
 
 ## Contributions
 Contributions and suggestions for improvement are welcome! Please create a pull request or open an issue on GitHub.
