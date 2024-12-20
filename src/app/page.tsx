@@ -152,7 +152,7 @@ export default function Home() {
                     key={index}
                     className="p-4 bg-gray-100 rounded-md shadow-sm transition-transform transform hover:scale-105 hover:bg-blue-50"
                   >
-                    <div className="text-lg font-medium text-gray-800">Analysis Results: {sn.sn}</div>
+                    <div className="text-lg font-medium text-gray-800">Serial Number: {sn.sn}</div>
                     <div className="text-sm text-gray-500">
                       Confidence: <span className="font-semibold text-green-600">{sn.confidencePercent}%</span>
                     </div>
