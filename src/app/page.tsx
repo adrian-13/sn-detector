@@ -141,11 +141,12 @@ export default function Home() {
           </div>
         )}
 
-        {results && (
-          <div className="mt-8 bg-white shadow rounded-lg p-6">
-            <h2 className="text-xl font-semibold mb-4 text-blue-600">Výsledky analýzy</h2>
+      {results && (
+        <div className="mt-8 flex justify-center">
+          <div className="bg-white shadow rounded-lg p-6 max-w-md">
+            <h2 className="text-xl font-semibold mb-4 text-blue-600 text-center">Výsledky analýzy</h2>
             {results.serialNumbers?.length > 0 ? (
-              <div className="grid gap-4 md:grid-cols-2">
+              <div className="space-y-4">
                 {results.serialNumbers.map((sn, index) => (
                   <div
                     key={index}
@@ -159,12 +160,12 @@ export default function Home() {
                 ))}
               </div>
             ) : (
-              <p className="text-gray-600">Neboli nájdené žiadne sériové čísla.</p>
+              <p className="text-gray-600 text-center">Neboli nájdené žiadne sériové čísla.</p>
             )}
 
             {results.failedCandidates?.length > 0 && (
               <div className="mt-6">
-                <h3 className="text-lg font-medium text-red-600 mb-3">Nevalidné nálezy</h3>
+                <h3 className="text-lg font-medium text-red-600 mb-3 text-center">Nevalidné nálezy</h3>
                 <div className="space-y-4">
                   {results.failedCandidates.map((candidate, index) => (
                     <div
@@ -181,7 +182,8 @@ export default function Home() {
               </div>
             )}
           </div>
-        )}
+        </div>
+      )}
       </div>
     </div>
   );

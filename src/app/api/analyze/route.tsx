@@ -5,6 +5,7 @@ import { writeFile } from 'fs/promises';
 import { join } from 'path';
 import unorm from 'unorm';
 
+
 // Definícia typov pre výsledky
 interface SerialNumber {
   sn: string;
