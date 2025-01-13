@@ -38,7 +38,7 @@ If you need to adjust the recognition conditions, you can:
 ## Running Locally
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repository-url.git
+   git clone https://github.com/adrian-13/sn-detector.git
    ```
 2. Install dependencies:
    ```bash
