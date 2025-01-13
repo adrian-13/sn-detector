@@ -19,7 +19,7 @@ A live demo of the project is available at: [https://sn-detector.vercel.app/](ht
    - Reasons for invalid findings will also be provided.
 
 ## Customizing Serial Number Format
-The format of serial numbers is defined using a regular expression:
+The format of serial numbers is defined in the file `src/app/api/analyze/route.tsx`. Specifically, the regular expression (`SN_REGEX`) is used to identify serial numbers.
 
 ```typescript
 const SN_REGEX = /(serial\s*no\.?)|(s\s*\/\?\s*n\.?)|(serial\s*number)|(serial\s*#)|(sn:?)/i;
