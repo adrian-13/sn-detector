@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Upload, Camera } from 'lucide-react';
-import Head from 'next/head'; // Importujte komponent Head
+import Head from 'next/head';
 
 interface SerialNumber {
   sn: string;
